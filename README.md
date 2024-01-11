@@ -1,2 +1,3 @@
-# PlatoonInterviewMachine
-A convenient and interactive tool for practicing interviews.
+# Platoon Interview Machine
+* This application functions as a convenient and interactive tool for practicing interviews. With just a simple button press, users can receive a random interview question audibly. They can then formulate and record their responses, and the application allows for smooth playback of their answers.
+- This tool is designed to assist users in honing their interview skills by providing a diverse range of questions and facilitating the review of their responses for self-improvement. Whether preparing for job interviews or simply looking to enhance communication skills, this application offers a user-friendly and practical platform for interview practice.
