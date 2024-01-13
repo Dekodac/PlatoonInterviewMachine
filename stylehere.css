@@ -1,0 +1,40 @@
+.flex-container {
+    background-color: burlywood;
+    color: cadetblue;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    text-shadow: 1px 1px 2px black;
+
+}
+h2{
+    color: red;
+    text-shadow: 1px 1px 2px black;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+
