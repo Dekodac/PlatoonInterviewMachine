@@ -7,7 +7,20 @@
     <link rel="stylesheet" href="stylehere.css">
     <link rel="icon" href="./favicon-16x16.png" type="image/x-icon">
 </head>
+
 <body>
+
+    <nav class="navbar">
+        <button onclick="goBack()">Go Back</button>
+
+<script>
+function goBack() {
+    // Use the window.history object to navigate back
+    window.history.back();
+}
+</script>
+
+    </nav>
     <div class="flex-container">
     <h1>Hello, Welcome to the Platoon Interview Machine</h1>
     <p id="intro">Below, please choose which voice you would like to use with the dropdown menu and then

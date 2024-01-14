@@ -13,6 +13,19 @@
 
 }
 
+nav > button{
+    font-weight: bolder;
+    background-color: black;
+}
+
+nav > button:hover {
+    background-color: red;
+}
+
+.navbar{
+    background-color: burlywood;
+}
+
 #intro {
     font-weight: bold;
     text-shadow: none;
