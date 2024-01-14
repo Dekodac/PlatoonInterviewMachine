@@ -1,19 +1,39 @@
-.flex-container {
-    background-color: burlywood;
-    color: cadetblue;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
+html, body {
     padding: 0;
-    text-shadow: 1px 1px 2px black;
-
+    margin: 0;
 }
 
-nav > button{
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: burlywood; 
+}
+
+.background-image-container {
+    position: relative;
+    height: 100%;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('army_camoflauged_laptop_in_an_.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.navbar {
+    background-color: burlywood;
+}
+
+nav > button {
     font-weight: bolder;
     background-color: black;
 }
@@ -22,26 +42,37 @@ nav > button:hover {
     background-color: red;
 }
 
-.navbar{
-    background-color: burlywood;
+.flex-container {
+    color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px black;
 }
 
 #intro {
     font-weight: bold;
     text-shadow: none;
-    width: 500px;
+    max-width: 500px;
     font-size: larger;
-    color: black
+    color: black;
 }
 
-
-
-
-h2{
+h2 {
     color: red;
     text-shadow: 1px 1px 2px black;
 }
 
+.row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
 
 select {
     appearance: none;
@@ -53,31 +84,28 @@ select {
     font-size: 16px;
     border-radius: 5px;
     outline: none;
-    width: 200px; /* Set the width as needed */
+    width: 100%;
     cursor: pointer;
-  }
-  
-  /* Style the arrow icon for the select */
-  select::after {
-    content: '\25BC'; /* Unicode character for down arrow */
+}
+
+select::after {
+    content: '\25BC';
     position: absolute;
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
     pointer-events: none;
-  }
-  
-  /* Style options within the select */
-  select option {
+}
+
+select option {
     background-color: #fff;
     color: #333;
-  }
-  
-  /* Hover effect on options */
-  select option:hover {
+}
+
+select option:hover {
     background-color: #e0e0e0;
-  }
-  
+}
+
 button {
     padding: 10px;
     font-size: 16px;
@@ -93,9 +121,14 @@ button:hover {
     background-color: #45a049;
 }
 
-html, body {
-    padding: 0;
-    margin: 0;
+@media only screen and (max-width: 768px) {
+    .flex-container {
+        font-size: smaller;
+    }
 }
 
-
+@media only screen and (max-width: 375px) {
+    .flex-container {
+        font-size: small;
+    }
+}

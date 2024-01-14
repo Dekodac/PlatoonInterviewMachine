@@ -157,12 +157,12 @@ const populateVoices = () => {
 // A function to ask a random question and make you ponder the mysteries of life
 const getQuestion = () => {
   // create questions variable to hold all my questions by accessing the object with dot notation and using the questions key
-  // const questions = interviewQuestions.behavioral_interview_questions;
+  const questions = interviewQuestions.behavioral_interview_questions;
 
   // THIS IS FOR TECH QUESTIONS --> HARDCODED, WILL NEED TO MAKE CATEGORY OR SOME SORT OF SELECTOR. 
   // TODO: `
-  const randomNum = Math.floor(Math.random() * moreQuestions["Version Control"].length);
-  const questions = moreQuestions["Version Control"][randomNum];
+  // const randomNum = Math.floor(Math.random() * moreQuestions["Version Control"].length);
+  // const questions = moreQuestions["Version Control"][randomNum];
 
   /* create randomIndex variable to give me a random number between Math.random() generates a floating-point number between 0
    (inclusive) and 1 (exclusive). When you multiply it by questions.length, you get a floating-point number in the range 
@@ -172,11 +172,11 @@ const getQuestion = () => {
   const randomIndex = Math.floor(Math.random() * questions.length);
 
   /* create aQuestion varaiable to grav the random question out of the object,  */
-  // const aQuestion = questions[randomIndex]["question"];
+  const aQuestion = questions[randomIndex]["question"];
 
-  const aQuestion = questions;
-  console.log("line 174 and 175 here:")
-  console.log(aQuestion)
+  // const aQuestion = questions;
+  // console.log("line 174 and 175 here:")
+  // console.log(aQuestion)
 
   /* The line of code let utterance = new SpeechSynthesisUtterance(aQuestion); is creating a new instance of the
    SpeechSynthesisUtterance class in JavaScript. This instance is named utterance, and it is used to represent a speech
