@@ -183,11 +183,13 @@ const getQuestion = () => {
     request that can be sent to the browser's text-to-speech engine. */
   let utterance = new SpeechSynthesisUtterance(aQuestion);
 
+// Get the currently selected index from the dropdown menu with the id "voiceSelect"
+const selectedVoiceIndex = voiceSelect.selectedIndex;
 
-/*setting the voice property of the SpeechSynthesisUtterance instance (utterance) to a specific voice from the array of
- available voices (voices) */
-  utterance.voice = voices[0]; // You may need to handle cases where voices are as elusive as good interview answers
+// Use the selected index to access the corresponding voice from the array of available voices (voices)
+utterance.voice = voices[selectedVoiceIndex];
 
+  
   window.speechSynthesis.speak(utterance);
 
   // alert(questions[randomIndex].question);
