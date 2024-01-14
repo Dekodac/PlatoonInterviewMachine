@@ -17,6 +17,42 @@ h2{
     text-shadow: 1px 1px 2px black;
 }
 
+/* Style the select container */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    width: 200px; /* Set the width as needed */
+    cursor: pointer;
+  }
+  
+  /* Style the arrow icon for the select */
+  select::after {
+    content: '\25BC'; /* Unicode character for down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  /* Style options within the select */
+  select option {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Hover effect on options */
+  select option:hover {
+    background-color: #e0e0e0;
+  }
+  
 button {
     padding: 10px;
     font-size: 16px;

@@ -82,19 +82,64 @@ const interviewQuestions = {
           }
     ]
   };
+//_____________________________________________________________________________________________________
 
-  
-  
-  const getQuestion = () => {
-    const questions = interviewQuestions.behavioral_interview_questions;
-    const randomIndex = Math.floor(Math.random() * questions.length);
-    alert(questions[randomIndex].question);
-  };
+              //WARNING LOTS OF LEARNING .. LOTS OF COMMENTS AND OHHHS. LOL
 
 
-document.getElementById('questionButton').onclick = function() {
-    getQuestion();  
-  };
-  
+let voices = [];
+let voiceSelect = document.querySelector("select");
 
-  
+// A function to populate the voices in the select dropdown, because even voices need options
+const populateVoices = () => {
+  voices = window.speechSynthesis.getVoices();
+
+  // Populate voice options in the select element
+  voices.forEach((voice, index) => {
+    voiceSelect.options[index] = new Option(voice.name, index);
+  });
+};
+
+// A function to ask a random question and make you ponder the mysteries of life
+const getQuestion = () => {
+  // create questions variable to hold all my questions by accessing the object with dot notation and using the questions key
+  const questions = interviewQuestions.behavioral_interview_questions;
+
+  /* create randomIndex variable to give me a random number between Math.random() generates a floating-point number between 0
+   (inclusive) and 1 (exclusive). When you multiply it by questions.length, you get a floating-point number in the range 
+   [0, questions.length). The Math.floor() function then rounds this number down to the nearest integer, resulting in an
+   integer in the range [0, questions.length - 1].*/
+  const randomIndex = Math.floor(Math.random() * questions.length);
+
+  /* create aQuestion varaiable to grav the random question out of the object,  */
+  const aQuestion = questions[randomIndex]["question"];
+
+  /* The line of code let utterance = new SpeechSynthesisUtterance(aQuestion); is creating a new instance of the
+   SpeechSynthesisUtterance class in JavaScript. This instance is named utterance, and it is used to represent a speech
+    request that can be sent to the browser's text-to-speech engine. */
+  let utterance = new SpeechSynthesisUtterance(aQuestion);
+
+
+/*setting the voice property of the SpeechSynthesisUtterance instance (utterance) to a specific voice from the array of
+ available voices (voices) */
+  utterance.voice = voices[0]; // You may need to handle cases where voices are as elusive as good interview answers
+
+  window.speechSynthesis.speak(utterance);
+
+  alert(questions[randomIndex].question);
+};
+/// KINDA LOST IN THE SAUCE AT 2AM 
+
+
+document.getElementById('questionButton').onclick = function () {
+  getQuestion();
+};
+
+// Check for available voices immediately after the page loads
+window.onload = () => {
+  populateVoices();
+};
+
+// setting an event handler function (populateVoices) to be executed 
+// when the onvoiceschanged event occurs within the speechSynthesis object in the global window
+window.speechSynthesis.onvoiceschanged = populateVoices;
